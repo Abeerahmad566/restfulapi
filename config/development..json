@@ -1,5 +1,6 @@
 {
-    "db": "mongodb://localhost/AbeerTech",  
+    "db1": "mongodb://localhost/AbeerTech",  
+    "db":"mongodb://abeer:abeer@cluster0-shard-00-00.xb4hm.mongodb.net:27017,cluster0-shard-00-01.xb4hm.mongodb.net:27017,cluster0-shard-00-02.xb4hm.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-vg9ot1-shard-0&authSource=admin&retryWrites=true&w=majority",
     "jwtPrivateKey": "hello",
     "myenvironment":"Development"
   }
