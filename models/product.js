@@ -1,10 +1,11 @@
 var mongoose = require("mongoose");
 const Joi = require("@hapi/joi");
-const { Schema } = mongoose;
-const productSchema = new Schema({
+var productSchema = mongoose.Schema({
   name: String,
   price: Number,
 });
+var Product = mongoose.model("Product", productSchema);
+
 function validateProduct(data) {
   const schema = Joi.object({
     name: Joi.string().min(3).max(10).required(),
@@ -12,4 +13,5 @@ function validateProduct(data) {
   });
   return schema.validate(data, { abortEarly: false });
 }
-module.exports = mongoose.model.Product || mongoose.model("Product", productSchema); 
+module.exports.Product = Product;
+module.exports.validate = validateProduct;
