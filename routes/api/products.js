@@ -6,11 +6,7 @@ const admin = require("../../middleWares/admin");
 const { Product } = require("../../models/product");
 //get products
 router.get("/",async (req, res) => {
-  console.log(req.user);
-  let page = Number(req.query.page ? req.query.page : 1);
-  let perPage = Number(req.query.perPage ? req.query.perPage : 10);
-  let skipRecords = perPage * (page - 1);
-  let products = await Product.find().skip(skipRecords).limit(perPage);
+  let products = await Product.find();
   return res.send(products);
 });
 //get single products
